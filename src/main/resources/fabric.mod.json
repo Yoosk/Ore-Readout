@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "ore-readout",
+  "version": "${version}",
+  "name": "Ore Readout",
+  "description": "",
+  "authors": [
+    "yitzy299"
+  ],
+  "contact": {
+    "issues": "https://github.com/yitzy299/ore-readout",
+    "sources": "https://github.com/yitzy299/ore-readout"
+  },
+  "license": "MIT",
+  "icon": "assets/ore-readout/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.github.fabricservertools.orereadout.OreReadout"
+    ]
+  },
+  "mixins": [
+    "ore-readout.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": ">=0.25.0",
+    "minecraft": "1.16.5"
+  }
+}
