@@ -40,6 +40,7 @@ public class OreReadout implements ModInitializer {
     private void readProperties() throws IOException {
         InputStream inputStream = new FileInputStream(FabricLoader.getInstance().getConfigDir().toAbsolutePath().toString() + "/ore-readout.properties");
         Properties props = new Properties();
+        props.load(inputStream);
         sendToChat = props.getProperty("send_to_chat").equals("true");
         sendInConsole = props.getProperty("send_to_console").equals("true");
     }
