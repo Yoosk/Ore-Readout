@@ -1,4 +1,4 @@
-package com.github.fabricservertools.orereadout;
+package com.github.yitzy299.orereadout;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -17,6 +17,7 @@ public class OreReadout implements ModInitializer {
     public static Logger LOG = LogManager.getLogger();
     public static boolean sendToChat = false;
     public static boolean sendInConsole = true;
+    public static String blocks;
     @Override
     public void onInitialize() {
         Path configPath = Paths.get(FabricLoader.getInstance().getConfigDir().toAbsolutePath().toString() + "/ore-readout.properties");
@@ -43,5 +44,6 @@ public class OreReadout implements ModInitializer {
         props.load(inputStream);
         sendToChat = props.getProperty("send_to_chat").equals("true");
         sendInConsole = props.getProperty("send_to_console").equals("true");
+        blocks = props.getProperty("blocks");
     }
 }

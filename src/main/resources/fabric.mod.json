@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "ore-readout",
-  "version": "${version}",
+  "version": "1.2.0",
   "name": "Ore Readout",
-  "description": "",
+  "description": "A small fabric mod for printing in chat to operators and to the console when blocks are broken",
   "authors": [
     "yitzy299"
   ],
@@ -16,7 +16,7 @@
   "environment": "server",
   "entrypoints": {
     "main": [
-      "com.github.fabricservertools.orereadout.OreReadout"
+      "com.github.yitzy299.orereadout.OreReadout"
     ]
   },
   "mixins": [

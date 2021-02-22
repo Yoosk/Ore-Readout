@@ -1,9 +1,8 @@
-package com.github.fabricservertools.orereadout.mixin;
+package com.github.yitzy299.orereadout.mixin;
 
-import com.github.fabricservertools.orereadout.OreReadout;
+import com.github.yitzy299.orereadout.OreReadout;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Formatting;
@@ -21,23 +20,7 @@ public class MixinBlockBreak {
     @Inject(method = "onBreak(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/player/PlayerEntity;)V", at = @At("HEAD"))
     public void onBroken(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo ci) {
         Block block = state.getBlock();
-        if (block.is(Blocks.COAL_ORE)) {
-            print(block, pos, world, player);
-        } else if (block.is(Blocks.IRON_ORE)) {
-            print(block, pos, world, player);
-        } else if (block.is(Blocks.NETHER_GOLD_ORE)) {
-        print(block, pos, world, player);
-        } else if (block.is(Blocks.NETHER_QUARTZ_ORE)) {
-            print(block, pos, world, player);
-        }else if (block.is(Blocks.DIAMOND_ORE)) {
-            print(block, pos, world, player);
-        } else if (block.is(Blocks.EMERALD_ORE)) {
-            print(block, pos, world, player);
-        } else if (block.is(Blocks.REDSTONE_ORE)) {
-            print(block, pos, world, player);
-        } else if (block.is(Blocks.LAPIS_ORE)) {
-            print(block, pos, world, player);
-        } else if (block.is(Blocks.GOLD_ORE)) {
+        if (OreReadout.blocks.contains(Registry.BLOCK.getId(block).toString())) {
             print(block, pos, world, player);
         }
     }
@@ -54,6 +37,7 @@ public class MixinBlockBreak {
         if (OreReadout.sendInConsole) {
             OreReadout.LOG.info(Registry.BLOCK.getId(block) + " was broken by " + player.getName().asString() + " at " + pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + " in " + world.getRegistryKey().getValue());
         }
+
 
     }
 
