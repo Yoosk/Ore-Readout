@@ -28,10 +28,8 @@ public class MixinBlockBreak {
     private void print(Block block, BlockPos pos, World world, PlayerEntity player) {
         if (OreReadout.sendToChat) {
             player.getServer().getPlayerManager().getPlayerList().forEach(serverPlayerEntity -> {
-                if (serverPlayerEntity.hasPermissionLevel(2)) {
                     serverPlayerEntity.sendSystemMessage(new LiteralText(Registry.BLOCK.getId(block) + " was broken by " + player.getName().asString() + " at " + pos.getX() +
                             ", " + pos.getY() + ", " + pos.getZ() + " in " + world.getRegistryKey().getValue()).formatted(Formatting.YELLOW), Util.NIL_UUID);
-                }
             });
         }
         if (OreReadout.sendInConsole) {
