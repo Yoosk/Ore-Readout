@@ -2,8 +2,8 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.github.yitzy299.orereadout.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [
+  "compatibilityLevel": "JAVA_16",
+  "server": [
     "MixinBlockBreak"
   ],
   "injectors": {
