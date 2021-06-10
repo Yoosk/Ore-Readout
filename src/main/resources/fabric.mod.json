@@ -15,7 +15,7 @@
   "icon": "assets/ore-readout/icon.png",
   "environment": "server",
   "entrypoints": {
-    "server": [
+    "main": [
       "com.github.yitzy299.orereadout.OreReadout"
     ]
   },
